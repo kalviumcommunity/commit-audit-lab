@@ -4,7 +4,7 @@ const verifyToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1];
   if (!token) return res.status(401).json({ error: 'No token provided' });
 
-  const secret = process.env.JWT_SECRET;
+  const secret = process.env.JWT_SECRET || 'fallback-dev-key';
   jwt.verify(token, secret, (err, decoded) => {
     if (err) return res.status(403).json({ error: 'Invalid token' });
     req.user = decoded;
