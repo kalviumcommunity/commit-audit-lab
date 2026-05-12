@@ -1,0 +1,9 @@
+{
+  "name": "commit-audit-lab",
+  "version": "1.0.0",
+  "description": "Auth service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
